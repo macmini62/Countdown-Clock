@@ -7,11 +7,11 @@ export default function Timer(){
     const [timerHours, setTimerHours] = useState(0);
     const [timerMinutes, setTimerMinutes] = useState(0);
     const [timerSeconds, setTimerSeconds] = useState(0);
-
     let interval = useRef();
 
     useEffect(() => {
-        const countdownDate = new Date("December 24, 2023 23:00:00");
+
+        const countdownDate = new Date("January 1, 2024 00:00:00");
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -31,6 +31,7 @@ export default function Timer(){
         return() => {
             clearInterval(interval.current);
         };
+        
     });
 
     return (
