@@ -2,7 +2,6 @@ import React from "react";
 import Timer from "./Timer";
 import Countdown from "./Countdown";
 import Poster from "./Poster";
-import "./index.css";
 
 export default function App(){
 
