@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import "./index.css";
+import "./Timer.css";
 
 export default function Timer(){
 
@@ -34,9 +34,13 @@ export default function Timer(){
         
     });
 
+    const [display, setDisplay] = useState();
+
+
+
     return (
         <div className="timer--body flex flex-col items-center justify-between w-full h-full" >
-            <section className="relative flex justify-center w-[300px] h-1/6">
+            <section className="spinning--star relative flex justify-center w-[300px] h-1/6">
                 <img src="src\images\x-mas-star.svg" alt="" className="star--logo w-[100px] h-[100px]"/>
                 <div className="absolute top-5 z-10 text-[red] text-6xl font-bold">
                     {timerDays}

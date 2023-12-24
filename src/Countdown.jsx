@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
-import "./index.css";
+import "./Countdown.css";
 
 export default function Countdown(){
 
@@ -16,6 +16,7 @@ export default function Countdown(){
             
             if(timeRemaining < 0){
                 clearInterval(interval.current);
+                setCountdown(0);
             }
             else{
                 setCountdown(Math.floor(timeRemaining % (1000 * 60) / (1000)));

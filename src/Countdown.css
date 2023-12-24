@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.countdown--body{
+    color: #000;
+    /* background */
+    background-image: url("src/images/Christmas background with fir branches and gifts vector image on VectorStock.jpeg");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rotate--circle{
+    transform: rotate(360deg);
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
