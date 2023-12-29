@@ -26,7 +26,7 @@ export default function Countdown(){
                 clearInterval(interval.current);
             })
 
-        },1000)
+        },1000);
     });
 
     return (
@@ -40,6 +40,6 @@ export default function Countdown(){
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 

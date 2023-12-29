@@ -34,10 +34,6 @@ export default function Timer(){
         
     });
 
-    const [display, setDisplay] = useState();
-
-
-
     return (
         <div className="timer--body flex flex-col items-center justify-between w-full h-full" >
             <section className="spinning--star relative flex justify-center w-[300px] h-1/6">
@@ -67,5 +63,5 @@ export default function Timer(){
                 {timerDays === 1 ? "Day To Go!!" : "Days To Go!!"}
             </section>
         </div>
-    )
-}
+    );
+};

@@ -1,8 +1,8 @@
 import React from "react";
-import Timer from "./Timer";
-import Countdown from "./Countdown";
-import Poster from "./Poster";
-import Test from "./test";
+import Timer from "./timer/Timer.jsx";
+import Countdown from "./countdown/Countdown.jsx";
+import Poster from "./poster/Poster.jsx";
+import Test from "./Run.jsx";
 
 export default function App(){
 

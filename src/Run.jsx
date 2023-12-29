@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
-import Timer from "./Timer";
-import Countdown from "./Countdown";
-import Poster from "./Poster";
+import Timer from "./timer/Timer.jsx";
+import Countdown from "./countdown/Countdown.jsx";
+import Poster from "./poster/Poster.jsx";
 
 export default function Test(){
 
@@ -13,51 +13,45 @@ export default function Test(){
     const [secrem, setSecrem] = useState(0);
 
     useEffect(() => {
-        const newYear = new Date("December 24, 2023 03:32:00");
+        const newYear = new Date("December 29, 2023 03:10:00");
 
         interval = setInterval(() => {
             let now = new Date().getTime();
             const timeInterval = newYear - now;
             
-            if(timeInterval < 0){
+            if(timeInterval < -60000){
                 clearInterval(interval.current);
             }else{
                 setMinrem(Math.floor(timeInterval % (1000 * 60 * 60) / (1000 * 60)));
                 setSecrem(Math.floor(timeInterval % (1000 * 60) / (1000)));
             }
-        })
+        });
 
         return() => {
             clearInterval(interval.current);
-        }
+        };
+
     },[]);
 
     useEffect(() => {
-        if(minrem > 1){
-            setDisplay(prevDisplay => {
-                return <Timer/>
-            });
-        }
-        else if(minrem === 1){
-            setDisplay(prevDisplay => {
-                return <Countdown/>;
-            });
+        console.log("runned!");
+        if(minrem >= 1){
+            setDisplay(<Timer/>);
         }
         else if(minrem === 0){
-            setDisplay(prevDisplay => {
-                return <Poster/>;
-            })
+            setDisplay(<Countdown/>);
         }
-    },[]); //check on this dependency after adding display in it...
-
+        else if(minrem === -1){
+            setDisplay(<Poster/>);
+        }
+    },[minrem]);
 
     return (
         <div className="w-screen h-screen">
-            Minutes: {minrem} min Remaining
-            <br/>
-            Seconds: {secrem}s Remaining
+            {/* min rem: {minrem} <br/>
+            sec rem: {secrem} */}
             {display}
         </div>
     );
-}
+};
  

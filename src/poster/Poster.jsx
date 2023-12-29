@@ -1,5 +1,5 @@
 import React from "react";
-import "./Poster";
+import "./Poster.css";
 
 export default function Timer(){
 
@@ -7,3 +7,4 @@ export default function Timer(){
         <div className="poster--body w-full h-full"></div>
     )
 }
+
