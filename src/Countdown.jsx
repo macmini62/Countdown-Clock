@@ -11,7 +11,7 @@ export default function Test(){
 
     useEffect(() => {
 
-        const countdownDate = new Date("December 31, 2023 14:21:00");
+        const countdownDate = new Date("December 31, 2023 14:31:00");
 
         interval = setInterval(() => {
             const now = new Date().getTime();
