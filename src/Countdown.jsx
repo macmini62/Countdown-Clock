@@ -11,7 +11,7 @@ export default function Test(){
 
     useEffect(() => {
 
-        const countdownDate = new Date("December 31, 2023 14:31:00");
+        const countdownDate = new Date("December 31, 2023 14:45:00");
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -121,7 +121,12 @@ export default function Test(){
             setDisplay(Timer);
         }
         else if(minutesRemaining === 0){
-            setDisplay(Countdown);
+            if(secondsRemaining <= 10){
+                setDisplay(Countdown);
+            }
+            else{
+                setDisplay(Timer);
+            }
         }
         else if(minutesRemaining < 0){
             setDisplay(Poster);
